@@ -88,7 +88,7 @@ async def callback(call: types.callback_query.CallbackQuery) -> None:
         case "Your call_back text":
             await bot.send_sticker(call.from_user.id,
                                    sticker="Your sticker id")
-            await call.message.answer("Your message answer", reply_markup=markups.pravda_markup)
+            await call.message.answer("Your message answer", reply_markup=markups.first_text_markup)
         case "Your call_back text":
             await call.message.answer("Your message answer", reply_markup=markups.main_markup)
         case "Your call_back text for voice message":
@@ -97,11 +97,11 @@ async def callback(call: types.callback_query.CallbackQuery) -> None:
             await call.message.answer("Your text when user gets back to main markup", reply_markup=markups.main_markup)
 
         case "Your call_back text for chain of markups (first)":
-            await call.message.answer("Your message answer", reply_markup=markups.first_text_markup)
-        case "Your call_back text for chain of markups (second)":
             await call.message.answer("Your message answer", reply_markup=markups.second_text_markup)
-        case "YYour call_back text for chain of markups (third)":
+        case "Your call_back text for chain of markups (second)":
             await call.message.answer("Your message answer", reply_markup=markups.third_text_markup)
+        case "YYour call_back text for chain of markups (third)":
+            await call.message.answer("Your message answer", reply_markup=markups.fourth_text_markup)
         case "Your call_back text for chain of markups (fourth)":
             await call.message.answer("Your message answer", reply_markup=markups.main_markup)
 
